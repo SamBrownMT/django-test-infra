@@ -38,7 +38,9 @@ variables:                    # Pass environment variables as key value pairs.
 
 secrets:                      # Pass secrets from AWS Systems Manager (SSM) Parameter Store.
   DB_PASSWORD:
-    secretsmanager: 'rds!db-3aabe063-5b65-432b-ad68-8d7fed478808'  # The key is the name of the environment variable, the value is the name of the SSM parameter.
+    secretsmanager: 'rds!db-3aabe063-5b65-432b-ad68-8d7fed478808'
+  DB_USERNAME: /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/DB_USERNAME  # The key is the name of the environment variable, the value is the name of the SSM parameter.
+  DB_HOST: /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/DB_HOST
 
 # You can override any of the values defined above by environment.
 #environments:
